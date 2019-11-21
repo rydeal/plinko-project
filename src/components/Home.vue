@@ -1,14 +1,23 @@
 <template>
     <div>
         <div>
-            Home
+            Plinko Board
+        </div>
+        <div>
+          <div class="score">
+            Score: {{score}}
+          </div>
+          <div class="button">
+            Drop Ball
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Home"
+    name: "Home",
+    score: 10000
 }
 </script>
 
