@@ -16,8 +16,11 @@
 
 <script>
 export default {
+data: function () {
+    return {
     name: "Home",
     score: 10000
+    }}
 }
 </script>
 
