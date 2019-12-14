@@ -1,25 +1,47 @@
 <template>
   <div id="app">
-    <form>
+    <form action="getFormValues">
       <div class="options">
-        <input
-          id="qValue"
-          type="radio"
-          name="score"
-          value="10"
-          v-model="value"
-        />
-        <label for="10">
-          10 points
-        </label>
-        <br />
-        <input id="what" type="radio" name="score" value="10" v-model="value" />
-        <label for="10">
-          10 points
-        </label>
+        <div id="0" class="hidden">
+          <input type="radio" name="score" value="0" v-model="value" />
+          <label for="0">
+            0 points
+          </label>
+        </div>
+        <div id="10" class="hidden">
+          <input type="radio" name="score" value="10" v-model="value" />
+          <label for="10">
+            10 points
+          </label>
+        </div>
+        <div id="100" class="hidden">
+          <input type="radio" name="score" value="100" v-model="value" />
+          <label for="100">
+            100 points
+          </label>
+        </div>
+        <div id="500" class="hidden">
+          <input type="radio" name="score" value="500" v-model="value" />
+          <label for="500">
+            500 points
+          </label>
+        </div>
+        <div id="1000" class="hidden">
+          <input type="radio" name="score" value="1000" v-model="value" />
+          <label for="1000">
+            1,000 points
+          </label>
+        </div>
+        <div id="100000" class="hidden">
+          <input type="radio" name="score" value="100000" v-model="value" />
+          <label for="100000">
+            100,000 points
+          </label>
+        </div>
       </div>
       <br />
       <br />
+      <input type="submit" value="Submit" />
       <router-link
         type="submit"
         :to="{ name: 'question', params: { id: value } }"
