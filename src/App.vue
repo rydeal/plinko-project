@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div class="board">
-      <img :src="image" />
+      <canvas id="renderCanvas" width="800" height="600"></canvas>
     </div>
-    <form>
+    <form action="getFormValues">
       <div class="options">
         <input id="10" type="radio" name="score" value="10" v-model="value" />
         <label for="10">
@@ -44,14 +44,16 @@
       </div>
       <br />
       <br />
-      <button @click="routerOpen = !routerOpen">
-        <router-link v-bind:to="'/question/' + value"
-          >Question Value:
-          {{
-            value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-          }}</router-link
-        >
-      </button>
+      <input type="submit" value="Submit" />
+      <router-link
+        type="submit"
+        :to="{ name: 'question', params: { id: value } }"
+        v-on:click.native="routerOpen = !routerOpen"
+        >Question Value:
+        {{
+          value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        }}</router-link
+      >
     </form>
     <br />
     <br />
@@ -64,14 +66,7 @@
         class="close"
         icon="times"
       />
-      <router-view
-        v-show="routerOpen"
-        v-closable="{
-          exclude: ['button'],
-          handler: 'onClose'
-        }"
-        class="popup-container"
-      ></router-view>
+      <router-view v-show="routerOpen" class="popup-container"></router-view>
     </div>
   </div>
 </template>

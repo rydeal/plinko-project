@@ -13,7 +13,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   routes: [
     { path: "/", component: Home },
-    { path: "/question/:id", component: Question },
+    { path: "/question/:id", component: Question, name: "question" },
     { path: "/question", component: Question },
     { path: "/result", component: Result }
   ]
