@@ -32,7 +32,7 @@ var questionNum;
 export default {
   data: function() {
     return {
-      questionNum: questionNum,
+      questionNum: 0,
       question: GameData[10][questionNum].question,
       value: 10,
       options: ["option"]
