@@ -40,8 +40,6 @@
         </div>
       </div>
       <br />
-      <br />
-      <input type="submit" value="Submit" />
       <router-link
         type="submit"
         :to="{ name: 'question', params: { id: value } }"
@@ -52,9 +50,6 @@
         }}</router-link
       >
     </form>
-    <br />
-    <br />
-    <br />
     <br />
 
     <div v-show="routerOpen" class="overlay">

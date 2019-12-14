@@ -225,5 +225,6 @@ export default {
       ],
       answer: "0"
     }
-  ]
+  ],
+  score: 0
 };
