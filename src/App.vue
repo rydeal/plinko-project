@@ -66,6 +66,7 @@
       <router-view v-show="routerOpen" class="popup-container"></router-view>
     </div>
   </div>
+  
 </template>
 
 <script>
