@@ -762,6 +762,7 @@ function createScene() {
 // test function just to make sure that functions work with collision
 function itWorks() {
   console.log("yes");
+  document.getElementById("qValue").setAttribute("value", "500");
 }
 
 // this doesn't do anything right now
