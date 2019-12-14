@@ -39,8 +39,15 @@ export default {
         GameData[score][questionNum].options[
           GameData[score][questionNum].answer
         ],
-      pointsadded: "+1000"
+      userScore: GameData.score
     };
+  },
+  created() {
+    if (
+      this.$route.params.answer == GameData[this.score][this.questionNum].answer
+    ) {
+      GameData.score += this.$route.params.value;
+    }
   },
   methods: {
     // getFormValues(submitEvent) {
