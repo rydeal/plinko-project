@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+    <p>
+      <b>Directions:</b><br />
+      -Click and drag to position ball <br />
+      -Click Start Plinko Button<br />
+      -Select the radio button that appears <br />
+      -Click the link
+    </p>
     <form action="getFormValues">
       <div class="options">
         <div id="0" class="hidden">
@@ -121,7 +128,7 @@ export default {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 .close {
   font-size: 50px;

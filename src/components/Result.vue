@@ -8,15 +8,13 @@
       The Question: {{ question }} <br />
       Your Answer: {{ useranswer }}<br />
       Correct Answer: {{ correctanswer }}<br />
-      Points Added: {{ pointsadded }} Points<br />
     </div>
     <div class="scorecalc">
       <h2>Score</h2>
-      Old Score: +{{ pointsadded }}<br />
       New Score: {{ userScore }}<br />
     </div>
     <div class="button">
-      Next Turn
+      Click X to close
     </div>
   </div>
 </template>
