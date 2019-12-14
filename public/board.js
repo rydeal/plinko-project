@@ -728,6 +728,7 @@ function createScene() {
     ) {
       console.log("100");
       itWorks();
+      document.getElementById("100").classList.remove("hidden");
     }
     if (
       ball.intersectsMesh(left500, false) ||
@@ -735,6 +736,7 @@ function createScene() {
     ) {
       console.log("500");
       itWorks();
+      document.getElementById("500").classList.remove("hidden");
     }
     if (
       ball.intersectsMesh(left1000, false) ||
@@ -742,6 +744,7 @@ function createScene() {
     ) {
       console.log("1000");
       itWorks();
+      document.getElementById("1000").classList.remove("hidden");
     }
     if (
       ball.intersectsMesh(left0, false) ||
@@ -749,10 +752,12 @@ function createScene() {
     ) {
       console.log("0");
       itWorks();
+      document.getElementById("0").classList.remove("hidden");
     }
     if (ball.intersectsMesh(maximum, false)) {
       console.log("maximum");
       itWorks();
+      document.getElementById("100000").classList.remove("hidden");
     }
   });
 

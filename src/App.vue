@@ -2,49 +2,46 @@
   <div id="app">
     <form action="getFormValues">
       <div class="options">
-        <input id="10" type="radio" name="score" value="10" v-model="value" />
-        <label for="10">
-          10 points
-        </label>
-        <br />
-        <input id="100" type="radio" name="score" value="100" v-model="value" />
-        <label for="100">
-          100 points
-        </label>
-        <br />
-        <input id="500" type="radio" name="score" value="500" v-model="value" />
-        <label for="500">
-          500 points
-        </label>
-        <br />
-        <input
-          id="1000"
-          type="radio"
-          name="score"
-          value="1000"
-          v-model="value"
-        />
-        <label for="1000">
-          1,000 points
-        </label>
-        <br />
-        <input
-          id="100000"
-          type="radio"
-          name="score"
-          value="100000"
-          v-model="value"
-        />
-        <label for="100000">
-          100,000 points
-        </label>
+        <div id="0" class="hidden">
+          <input type="radio" name="score" value="0" v-model="value" />
+          <label for="0">
+            0 points
+          </label>
+        </div>
+        <div id="10" class="hidden">
+          <input type="radio" name="score" value="10" v-model="value" />
+          <label for="10">
+            10 points
+          </label>
+        </div>
+        <div id="100" class="hidden">
+          <input type="radio" name="score" value="100" v-model="value" />
+          <label for="100">
+            100 points
+          </label>
+        </div>
+        <div id="500" class="hidden">
+          <input type="radio" name="score" value="500" v-model="value" />
+          <label for="500">
+            500 points
+          </label>
+        </div>
+        <div id="1000" class="hidden">
+          <input type="radio" name="score" value="1000" v-model="value" />
+          <label for="1000">
+            1,000 points
+          </label>
+        </div>
+        <div id="100000" class="hidden">
+          <input type="radio" name="score" value="100000" v-model="value" />
+          <label for="100000">
+            100,000 points
+          </label>
+        </div>
       </div>
       <br />
       <br />
       <input type="submit" value="Submit" />
-      <a :href="'question/' + value" @click="routerOpen = !routerOpen"
-        >GO THERE</a
-      >
       <router-link
         type="submit"
         :to="{ name: 'question', params: { id: value } }"
@@ -61,11 +58,9 @@
     <br />
 
     <div v-show="routerOpen" class="overlay">
-      <font-awesome-icon
-        v-on:click="routerOpen = !routerOpen"
-        class="close"
-        icon="times"
-      />
+      <a href="/" v-on:click="routerOpen = !routerOpen"
+        ><font-awesome-icon class="close" icon="times"
+      /></a>
       <router-view v-show="routerOpen" class="popup-container"></router-view>
     </div>
   </div>
@@ -73,7 +68,6 @@
 </template>
 
 <script>
-import image from "./assets/plinko-board.jpg";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 library.add(faTimes);
@@ -81,7 +75,7 @@ library.add(faTimes);
 export default {
   name: "app",
   data: function() {
-    return { value: 10, image: image, routerOpen: false };
+    return { value: 10, routerOpen: false };
   },
   methods: {
     getFormValues(submitEvent) {
