@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    <div class="board">
-      <canvas id="renderCanvas" width="800" height="600"></canvas>
-    </div>
     <form action="getFormValues">
       <div class="options">
         <input id="10" type="radio" name="score" value="10" v-model="value" />
@@ -45,6 +42,9 @@
       <br />
       <br />
       <input type="submit" value="Submit" />
+      <a :href="'question/' + value" @click="routerOpen = !routerOpen"
+        >GO THERE</a
+      >
       <router-link
         type="submit"
         :to="{ name: 'question', params: { id: value } }"
