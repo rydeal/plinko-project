@@ -1,1 +1,4 @@
-module.exports = { presets: ["@vue/cli-plugin-babel/preset"] };
+module.exports = {
+  publicPath: "/plinko-project",
+  presets: ["@vue/cli-plugin-babel/preset"]
+};
